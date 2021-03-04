@@ -42,7 +42,7 @@
         "url": "https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 36,
+    "uniqCompNum": 43,
     "versionPublish": "5.2.5",
     "imageResize": true,
     "screenshot": "screenshot.png",
@@ -239,6 +239,142 @@
         {
           "alias": false,
           "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-subtitle, .item-title, .mbr-section-title": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-white-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important"
+            },
+            ".item-img": {
+              "overflow": "hidden",
+              "position": "absolute",
+              "z-index": "0",
+              "top": "0",
+              "left": "0",
+              "right": "0",
+              "bottom": "0",
+              "img": {
+                "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.6s",
+                "width": "102%",
+                "height": "102%",
+                "object-fit": "cover",
+                "will-change": "transform"
+              },
+              "&:before when (@cardsBg)": {
+                "content": "\"\"",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0",
+                "opacity": "@cardOpacity",
+                "z-index": "1",
+                "background": "@colorBg"
+              }
+            },
+            "& when not (@fullWidth) and (@spacing)": {
+              ".item-img, img": {
+                "border-radius": "4px"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "min-height": "300px",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 130px)"
+                }
+              },
+              "&:hover": {
+                ".item-img img": {
+                  "transform": "scale3d(1.2, 1.2, 2)"
+                }
+              }
+            },
+            ".item-content": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "height": "100%",
+              "padding": "10% 20%",
+              "> div, p": {
+                "z-index": "5",
+                "position": "relative"
+              },
+              "@media (max-width: 1199px)": {
+                "padding": "8% 15%"
+              },
+              "@media (max-width: 991px)": {
+                "padding": "50px 75px"
+              },
+              "@media (max-width: 575px)": {
+                "padding": "30px 20px"
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "",
+          "_cid": "sqIzyz0Djx",
+          "_protectedParams": [],
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
             "position": "relative",
@@ -419,6 +555,710 @@
           "_once": false,
           "_params": {},
           "_anchor": "accordions1-s"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-subtitle": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-secondary-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important",
+              "&:hover, .active, &:focus": {
+                "color": "@primaryColor !important"
+              }
+            },
+            "@media (min-width: 991px)": {
+              "& when (@showAnimation)": {
+                ".item-wrapper .mbr-section-btn": {
+                  "margin-top": "0",
+                  "transform": "translateY(10px)",
+                  "opacity": "0",
+                  "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.4s"
+                }
+              }
+            },
+            ".item-img": {
+              "overflow": "hidden"
+            },
+            "img, .item-img": {
+              "border-top-left-radius": "4px",
+              "border-top-right-radius": "4px",
+              "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.4s",
+              "width": "100.5%",
+              "will-change": "transform",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "object-fit": "cover",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@cardButtons)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                }
+              }
+            },
+            ".item-content": {
+              "padding": "40px",
+              "background": "@cardsBg",
+              "@media (max-width: 767px)": {
+                "padding": "20px"
+              }
+            },
+            ".mbr-text": {
+              "transform": "translateY(0)",
+              "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.4s"
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-title, .card_topic": {
+              "margin-bottom": "12px"
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "border-radius": "4px",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "@media (min-width: 991px)": {
+                "& when (@showAnimation)": {
+                  "&:hover": {
+                    ".item-img img": {
+                      "transform": "scale3d(1.2, 1.2, 1)"
+                    },
+                    ".mbr-text": {
+                      "transform": "translateY(-15px)",
+                      "opacity": "0"
+                    },
+                    ".mbr-section-btn": {
+                      "opacity": "1",
+                      "transform": "translateY(-5px)"
+                    }
+                  }
+                }
+              },
+              "&:hover": {
+                ".item-title a": {
+                  "color": "@secondaryColor !important"
+                }
+              },
+              ".mbr-section-btn .btn-white-outline": {
+                "padding": "3px 0",
+                "margin-bottom": "0",
+                "border": "none !important",
+                "background-color": "transparent !important"
+              }
+            },
+            ".category_content": {
+              "opacity": ".8"
+            },
+            ".card_topic .mbr-iconfont": {
+              "font-size": "1rem",
+              "color": "#ffffff",
+              "margin-left": "10px",
+              "margin-right": "3px"
+            },
+            ".item-title": {
+              "color": "#e43f3f"
+            }
+          },
+          "_name": "features1",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "<section class=\"features1\" group=\"Features\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <select title=\"Columns\" name=\"cardsWidth\">\n            <option value=\"12\">1</option>\n            <option value=\"6\" selected>2</option>\n            <option value=\"4\">3</option>\n            <option value=\"3\">4</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n        <input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\" checked>\n        <input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked>\n        <header>Cards</header>\n        <input type=\"checkbox\" title=\"Animation\" name=\"showAnimation\" checked>\n        <input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n        <input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize && !(showLink==false && showCardTitle==false && showText==false)\">\n        <input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n        <input type=\"checkbox\" name=\"showTopic\" title=\"Topic\">\n        <input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked>\n        <input type=\"checkbox\" name=\"showText\" title=\"Text\" checked>\n        <input type=\"checkbox\" name=\"cardButtons\" title=\"Buttons\">\n        <input type=\"color\" name=\"cardsBg\" title=\"BG\" value=\"#010a44\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"../_images/background.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#fef8f5\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row align-items-end mb-4\" mbr-if=\"showSubtitle || showTitle || showButtons\">\n            <div class=\"col-12\" mbr-class=\"{'col-sm-6' : showButtons, 'col-sm-12' : !showButtons}\">\n                <div class=\"mbr-section-head\">\n                    <h4 class=\"mbr-section-subtitle mbr-semibold mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">FROM THE BLOG</h4>\n                    <h3 class=\"mbr-section-title mb-0 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>ПРИМЕРЫ</b></h3>\n                </div>\n            </div>\n            <div class=\"col-12 col-sm-6\" mbr-if=\"showButtons\">\n                <div class=\"mbr-section-btn text-left text-sm-right\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-secondary-outline\" href=\"#\" data-app-placeholder=\"Type Text\">Read More<span class=\"mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn\"></span></a></div>\n            </div>\n        </div>\n        \n        <div class=\"row\">\n            <div class=\"item features-image сol-12 col-lg-{{cardsWidth}}\">\n                <div class=\"item-wrapper\">\n                    <div class=\"item-img\">\n                        <img src=\"../_images/news4.jpg\" alt title>\n                    </div>\n                    <div class=\"item-content text-white\" mbr-if=\"showCardTitle || showText || showLink || showTopic\">\n                        <div class=\"card_topic\" mbr-if=\"showTopic\">\n                            <span mbr-text class=\"category_content mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_content, .card_topic\"><b>Most Read</b></span>\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-clock mobi-mbri\"></span>\n                            <span mbr-text class=\"category_estimate mbr-medium  mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_estimate, .card_topic\">6 min read</span>\n                        </div>\n                        <h5 class=\"item-title mbr-fonts-style\" mbr-if=\"showCardTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title\"><b><a href=\"https://create.piktochart.com/output/10274489-\" class=\"text-primary\">Презентация</a></b></h5>\n                        <p class=\"mbr-text mb-0 mbr-medium mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .mbr-section-btn\">Антикризисный сценарный план управления эффективностью внешнеэкономической деятельности (управляемый экспорт)</p>\n                        <div class=\"mbr-section-btn mt-3\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"cardButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a class=\"btn btn-white-outline\" href=\"#\" data-app-placeholder=\"Type Text\">Read More<span class=\"mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn\"></span></a></div>\n                    </div>\n                </div>\n            </div><div class=\"item features-image сol-12 col-lg-{{cardsWidth}}\">\n                <div class=\"item-wrapper\">\n                    <div class=\"item-img\">\n                        <img src=\"../_images/news6.jpg\" alt title>\n                    </div>\n                    <div class=\"item-content text-white\" mbr-if=\"showCardTitle || showText || showLink || showTopic\">\n                        <div class=\"card_topic\" mbr-if=\"showTopic\">\n                                <span mbr-text class=\"category_content  mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_content, .card_topic\"><b>Most Read</b></span>\n                                <span mbr-icon class=\"mbr-iconfont mobi-mbri-clock mobi-mbri\"></span>\n                                <span mbr-text class=\"category_estimate mbr-medium  mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_estimate, .card_topic\">6 min read</span>\n                        </div>\n                        <h5 class=\"item-title mbr-fonts-style\" mbr-if=\"showCardTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".item-title\"><b><a href=\"#\" class=\"text-info\">Презентация</a></b></h5>\n                        <p class=\"mbr-text mb-0 mbr-medium mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .mbr-section-btn\">Разумная деловая инициатива приобретения дорогостоящего оборудования и его безусловной загрузки в формате государственно-частного партнерства</p>\n                        <div class=\"mbr-section-btn mt-3\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"cardButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a class=\"btn btn-white-outline\" href=\"#\" data-app-placeholder=\"Type Text\">Read More<span class=\"mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn\"></span></a></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "sqIzAQpgKm",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "features1-10"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-subtitle, .item-title, .mbr-section-title": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-white-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important"
+            },
+            ".item-img": {
+              "overflow": "hidden",
+              "position": "absolute",
+              "z-index": "0",
+              "top": "0",
+              "left": "0",
+              "right": "0",
+              "bottom": "0",
+              "img": {
+                "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.6s",
+                "width": "102%",
+                "height": "102%",
+                "object-fit": "cover",
+                "will-change": "transform"
+              },
+              "&:before when (@cardsBg)": {
+                "content": "\"\"",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0",
+                "opacity": "@cardOpacity",
+                "z-index": "1",
+                "background": "@colorBg"
+              }
+            },
+            "& when not (@fullWidth) and (@spacing)": {
+              ".item-img, img": {
+                "border-radius": "4px"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "min-height": "300px",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 130px)"
+                }
+              },
+              "&:hover": {
+                ".item-img img": {
+                  "transform": "scale3d(1.2, 1.2, 2)"
+                }
+              }
+            },
+            ".item-content": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "height": "100%",
+              "padding": "10% 20%",
+              "> div, p": {
+                "z-index": "5",
+                "position": "relative"
+              },
+              "@media (max-width: 1199px)": {
+                "padding": "8% 15%"
+              },
+              "@media (max-width: 991px)": {
+                "padding": "50px 75px"
+              },
+              "@media (max-width: 575px)": {
+                "padding": "30px 20px"
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "",
+          "_cid": "sqIzxEnQh7",
+          "_protectedParams": [],
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-subtitle, .item-title, .mbr-section-title": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-white-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important"
+            },
+            ".item-img": {
+              "overflow": "hidden",
+              "position": "absolute",
+              "z-index": "0",
+              "top": "0",
+              "left": "0",
+              "right": "0",
+              "bottom": "0",
+              "img": {
+                "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.6s",
+                "width": "102%",
+                "height": "102%",
+                "object-fit": "cover",
+                "will-change": "transform"
+              },
+              "&:before when (@cardsBg)": {
+                "content": "\"\"",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0",
+                "opacity": "@cardOpacity",
+                "z-index": "1",
+                "background": "@colorBg"
+              }
+            },
+            "& when not (@fullWidth) and (@spacing)": {
+              ".item-img, img": {
+                "border-radius": "4px"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "min-height": "300px",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 130px)"
+                }
+              },
+              "&:hover": {
+                ".item-img img": {
+                  "transform": "scale3d(1.2, 1.2, 2)"
+                }
+              }
+            },
+            ".item-content": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "height": "100%",
+              "padding": "10% 20%",
+              "> div, p": {
+                "z-index": "5",
+                "position": "relative"
+              },
+              "@media (max-width: 1199px)": {
+                "padding": "8% 15%"
+              },
+              "@media (max-width: 991px)": {
+                "padding": "50px 75px"
+              },
+              "@media (max-width: 575px)": {
+                "padding": "30px 20px"
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "",
+          "_cid": "sqIztqv802",
+          "_protectedParams": [],
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-subtitle, .item-title, .mbr-section-title": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-white-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important"
+            },
+            ".item-img": {
+              "overflow": "hidden",
+              "position": "absolute",
+              "z-index": "0",
+              "top": "0",
+              "left": "0",
+              "right": "0",
+              "bottom": "0",
+              "img": {
+                "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.6s",
+                "width": "102%",
+                "height": "102%",
+                "object-fit": "cover",
+                "will-change": "transform"
+              },
+              "&:before when (@cardsBg)": {
+                "content": "\"\"",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0",
+                "opacity": "@cardOpacity",
+                "z-index": "1",
+                "background": "@colorBg"
+              }
+            },
+            "& when not (@fullWidth) and (@spacing)": {
+              ".item-img, img": {
+                "border-radius": "4px"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "min-height": "300px",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 130px)"
+                }
+              },
+              "&:hover": {
+                ".item-img img": {
+                  "transform": "scale3d(1.2, 1.2, 2)"
+                }
+              }
+            },
+            ".item-content": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "height": "100%",
+              "padding": "10% 20%",
+              "> div, p": {
+                "z-index": "5",
+                "position": "relative"
+              },
+              "@media (max-width: 1199px)": {
+                "padding": "8% 15%"
+              },
+              "@media (max-width: 991px)": {
+                "padding": "50px 75px"
+              },
+              "@media (max-width: 575px)": {
+                "padding": "30px 20px"
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "",
+          "_cid": "sqIzsAqEvY",
+          "_protectedParams": [],
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-subtitle, .item-title, .mbr-section-title": {
+              "margin-bottom": "12px"
+            },
+            ".mbr-section-btn .btn-white-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important"
+            },
+            ".item-img": {
+              "overflow": "hidden",
+              "position": "absolute",
+              "z-index": "0",
+              "top": "0",
+              "left": "0",
+              "right": "0",
+              "bottom": "0",
+              "img": {
+                "transition": "all cubic-bezier(0.4, 0, 0.2, 1) 0.6s",
+                "width": "102%",
+                "height": "102%",
+                "object-fit": "cover",
+                "will-change": "transform"
+              },
+              "&:before when (@cardsBg)": {
+                "content": "\"\"",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "right": "0",
+                "bottom": "0",
+                "opacity": "@cardOpacity",
+                "z-index": "1",
+                "background": "@colorBg"
+              }
+            },
+            "& when not (@fullWidth) and (@spacing)": {
+              ".item-img, img": {
+                "border-radius": "4px"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "3rem",
+              "& when (@cardsWidth = \"12\")": {
+                "@media (min-width: 992px)": {
+                  "margin-bottom": "5rem",
+                  "&:last-child": {
+                    "margin-bottom": "0"
+                  }
+                }
+              },
+              "@media (max-width: 991px)": {
+                "&:last-child": {
+                  "margin-bottom": "0"
+                }
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap",
+              "min-height": "300px",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 130px)"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 130px)"
+                }
+              },
+              "&:hover": {
+                ".item-img img": {
+                  "transform": "scale3d(1.2, 1.2, 2)"
+                }
+              }
+            },
+            ".item-content": {
+              "display": "flex",
+              "flex-direction": "column",
+              "justify-content": "space-between",
+              "height": "100%",
+              "padding": "10% 20%",
+              "> div, p": {
+                "z-index": "5",
+                "position": "relative"
+              },
+              "@media (max-width: 1199px)": {
+                "padding": "8% 15%"
+              },
+              "@media (max-width: 991px)": {
+                "padding": "50px 75px"
+              },
+              "@media (max-width: 575px)": {
+                "padding": "30px 20px"
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "newsm4",
+          "_customHTML": "",
+          "_cid": "sqIzq3uR6b",
+          "_protectedParams": [],
+          "_params": {}
         },
         {
           "_params": {

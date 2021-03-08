@@ -1274,31 +1274,6 @@ a {
   color: #ffffff;
   text-align: left;
 }
-.cid-sr4SH8XCp5 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-color: #ffffff;
-}
-.cid-sr4SH8XCp5 .card-wrapper {
-  padding-right: 2rem;
-}
-@media (max-width: 992px) {
-  .cid-sr4SH8XCp5 .card {
-    margin-bottom: 2rem!important;
-  }
-  .cid-sr4SH8XCp5 .card-wrapper {
-    padding: 0 1rem;
-  }
-}
-@media (max-width: 767px) {
-  .cid-sr4SH8XCp5 .link-wrap {
-    align-items: center;
-  }
-}
-.cid-sr4SH8XCp5 .image-wrapper img {
-  width: 100%;
-  object-fit: cover;
-}
 .cid-s48P1Icc8J {
   padding-top: 2rem;
   padding-bottom: 2rem;
